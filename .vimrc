@@ -58,6 +58,7 @@ Plug 'kana/vim-textobj-syntax' " key: y
 Plug 'kana/vim-textobj-function', { 'for':['c', 'cpp', 'vim', 'java'] } " key: f/F, dont work with cpp
 Plug 'sgur/vim-textobj-parameter' " key: ,
 Plug 'easymotion/vim-easymotion'
+Plug 'mbbill/echofunc' " show function tag in status bar
 call plug#end()
 
 map  f <Plug>(easymotion-bd-f)
@@ -69,7 +70,7 @@ nmap <Leader>w <Plug>(easymotion-overwin-w)
 let Tlist_Use_Right_Window=1
 
 " for debugging gutentags
-" let g:gutentags_trace = 1
+" let g:gutentags_trace = 1 " if enable, it will print log in screen
 
 " for Leaderf
 let g:Lf_GtagsAutoGenerate = 0
