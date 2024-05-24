@@ -2,20 +2,21 @@
 " 普通vim配置
 "
 set encoding=utf-8
-set nu " 打开行号
-set ts=4 " 设置tab=4空格
+set nu
+set ts=4
 set softtabstop=4 " 表示在编辑模式的时候按退格键的时候退回缩进的长度，当使用 expandtab 时特别有用
 set shiftwidth=4 " 每一级的缩进
-set expandtab " 把tab展开成空格
-syn on " 打开语法高亮
+set expandtab
+syn on
 set incsearch
 set scrolloff=2
 set sidescrolloff=2
 set nowrapscan
 " set sms " smoothly scroll
-set relativenumber " 打开相对行号
+set relativenumber
 
 let mapleader="\\"
+set clipboard=unnamedplus
 
 map + :resize +1<CR>
 map _ :resize -1<CR>
@@ -41,23 +42,22 @@ set laststatus=2 " for lightline
 " 高级vim配置，插件等
 "
 
-set clipboard=unnamedplus " 使用unnamedplus这个系统粘贴板
 
 call plug#begin()
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } " 文件浏览器
-Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' } " 模糊搜索神器
-Plug 'terryma/vim-multiple-cursors' " 多光标操作，用来重命令代码变量
-Plug 'ludovicchabant/vim-gutentags' " 自动生成ctags gtags索引文件
-Plug 'tpope/vim-commentary' " 注释代码快捷键
-Plug 'vim-airline/vim-airline' " 好看的状态栏
-Plug 'vim-airline/vim-airline-themes' " 好看的状态栏
-Plug 'ghifarit53/tokyonight-vim' " 好看的vim皮肤
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
+Plug 'terryma/vim-multiple-cursors'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'tpope/vim-commentary'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'ghifarit53/tokyonight-vim'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-indent'
 Plug 'kana/vim-textobj-syntax' " key: y
 Plug 'kana/vim-textobj-function', { 'for':['c', 'cpp', 'vim', 'java'] } " key: f/F, dont work with cpp
 Plug 'sgur/vim-textobj-parameter' " key: ,
-Plug 'easymotion/vim-easymotion' " 飞速移动
+Plug 'easymotion/vim-easymotion'
 Plug 'mbbill/echofunc' " show function tag in status bar
 call plug#end()
 
@@ -116,7 +116,10 @@ nmap <leader>a :TlistToggle<CR>
 nmap <Leader>e :NERDTreeFind<CR>
 nmap <F7> :Leaderf file --popup
 nmap <F8> :Leaderf rg --popup
-nmap <leader>fn :Leaderf function<CR>
+" nmap <leader>fn :Leaderf function<CR>
+" nmap <leader>fb :Leaderf buffer<CR>
+let g:Lf_ShortcutF = '<leader>ff'
+let g:Lf_ShortcutB = '<leader>fb'
 nmap <Leader>fg :Leaderf rg <C-R>=expand("<cword>")<CR>
 nmap <Leader>fe :Leaderf rg -F <C-R>=expand("<cword>")<CR>
 noremap <leader>gr :<C-U><C-R>=printf("Leaderf gtags -r %s --auto-jump", expand("<cword>"))<CR>
