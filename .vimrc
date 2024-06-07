@@ -116,7 +116,7 @@ nmap <leader>a :TlistToggle<CR>
 nmap <Leader>e :NERDTreeFind<CR>
 nmap <F7> :Leaderf file --popup
 nmap <F8> :Leaderf rg --popup
-" nmap <leader>fn :Leaderf function<CR>
+nmap <leader>fn :Leaderf function<CR>
 " nmap <leader>fb :Leaderf buffer<CR>
 let g:Lf_ShortcutF = '<leader>ff'
 let g:Lf_ShortcutB = '<leader>fb'
